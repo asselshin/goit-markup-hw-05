@@ -105,14 +105,17 @@ body{
     padding-top: 32px;
     padding-bottom: 32px;
     align-items: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-link {
     color: var(--secondary-font);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-icon{
     margin-right: 10px;
     background-size: 16px 12px;
     fill: var(--secondary-font);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-link:hover .contact-icon,
 .contact-link:focus .contact-icon{
@@ -128,6 +131,19 @@ body{
 }
 .menu-link.active{
     color:var(--accent-color);
+}
+.menu-item{
+    position: relative;
+}
+.menu-link.active::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    background-color: var(--accent-color);
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
 }
 /* =================================SECTION======= */
 .modal-btn {
@@ -146,6 +162,7 @@ body{
     padding: 10px 32px;
     margin-left: auto;
     margin-right: auto;  
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn:hover,
 .modal-btn:focus{
@@ -227,6 +244,23 @@ body{
 .work-item:not(:last-child){
     margin-right: 30px;
 }
+.work-item{
+    position: relative;
+}
+.work-description{
+    position:absolute;
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+    background-color: rgba(47, 48, 58, 0.8);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 27px;
+    padding-bottom: 27px;
+}
 /* ====================================TEAM===== */
 .team,
 .portfolio-btn{
@@ -273,12 +307,14 @@ body{
     border-radius: 50%;
     justify-content: center;
     align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-list-item:not(:last-child) {
     margin-right: 10px;
 }
 .social-list-icon{
     fill: var(--svg-list-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-list-link:hover .social-list-icon,
 .social-list-link:focus .social-list-icon {
@@ -304,11 +340,18 @@ body{
     border: 1px solid var(--svg-list-color);
     border-radius: 4px;
     fill: var(--svg-list-color);
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.clients-list-icon{
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .clients-list-link:hover .clients-list-icon,
 .clients-list-link:focus .clients-list-icon {
     fill: var(--accent-color);
+}
+.clients-list-link:hover,
+.clients-list-link:focus {
+    border: 1px solid var(--accent-color);
 }
 /* ==============================FOOTER========= */
 .page-footer {
@@ -316,6 +359,7 @@ body{
 }
 .address-item{
     color: var(--adr-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .white-theme{
     color: var(--white-color);
@@ -372,6 +416,7 @@ body{
     border-radius: 4px;
     border: none;
     padding: 6px 22px;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus{
@@ -420,6 +465,7 @@ body{
 }
 .portfolio-list-link{
     display: block;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-list-link:hover,
 .portfolio-list-link:focus {
